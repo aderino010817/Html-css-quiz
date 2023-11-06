@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="freeCodeCamp Accessibility Quiz practice project" />
+    <title>BAX-Accessibility Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+<style>@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: #f5f6f7;
+  color: #1b1b32;
+  font-family: Helvetica;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  background-color: #1b1b32;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+
+#logo {
+  width: max(100px, 20vw);
+  background-color: #0a0a23;
+  aspect-ratio: 0 / 0;
+  padding: 0.0rem;
+}
+
+h1 {
+  color: #f1be32;
+  font-size: min(5vw, 1.2em);
+  text-align: center;
+}
+
+nav {
+  width: 50%;
+  max-width: 300px;
+  height: 50px;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-inline-start: 0;
+  margin-block: 0;
+  height: 100%;
+}
+
+nav > ul > li {
+  color: #dfdfe2;
+  margin: 0 0.2rem;
+  padding: 0.2rem;
+  display: block;
+}
+
+nav > ul > li:hover {
+  background-color: #dfdfe2;
+  color: #1b1b32;
+  cursor: pointer;
+}
+
+li > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  padding-top: 50px;
+}
+
+section {
+  width: 80%;
+  margin: 0 auto 10px auto;
+  max-width: 600px;
+}
+
+h1,
+h2 {
+  font-family: Verdana, Tahoma;
+}
+
+h2 {
+  border-bottom: 4px solid #dfdfe2;
+  margin-top: 0px;
+  padding-top: 60px;
+}
+
+.info {
+  padding: 10px 0 0 5px;
+}
+
+.formrow {
+  margin-top: 30px;
+  padding: 0px 15px;
+}
+
+input {
+  font-size: 16px;
+}
+
+.info label, .info input {
+  display: inline-block;
+}
+
+.info input {
+  width: 50%;
+  text-align: left;
+}
+
+.info label {
+  width: 10%;
+  min-width: 55px;
+  text-align: right;
+}
+
+.question-block {
+  text-align: left;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 5px;
+}
+
+p {
+  margin-top: 5px;
+  padding-left: 15px;
+  font-size: 20px;
+}
+
+p::before {
+  content: "Question #";
+}
+
+.question {
+  border: none;
+  padding-bottom: 0;
+}
+
+.answers-list {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  display: block;
+  margin: 40px auto;
+  width: 40%;
+  padding: 15px;
+  font-size: 23px;
+  background: #d0d0d5;
+  border: 3px solid #3b3b4f;
+}
+
+footer {
+  background-color: #2a2a40;
+  display: flex;
+  justify-content: center;
+}
+
+footer,
+footer a {
+  color: #dfdfe2;
+}
+
+address {
+  text-align: center;
+  padding: 0.3em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+</style>
+  </head>
+  <body>
+    <header>
+      <img id="BAX-logo" src="https://baxdigital.my.id/wp-content/uploads/2023/03/cropped-BAX_Logo-removebg-preview-Copy.png">
+      <h1>BAX-HTML/CSS <br>BAX-Quiz</h1>
+      <nav>
+        <ul>
+          <li><a href="#BAX-student-info" accesskey="a">INFO</a></li>
+          <li><a href="#BAX-html-questions" accesskey="a">HTML</a></li>
+          <li><a href="#BAX-css-questions" accesskey="a">CSS</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form method="post" action="https://freecodecamp.org/practice-project/accessibility-quiz">
+        <section role="region" aria-labelledby="BAX-student-info">
+          <h2 id="BAX-student-info">Student Info</h2>
+          <div class="info">
+            <label for="BAX-student-name">Name:</label>
+            <input type="text" name="BAX-student-name" id="BAX-student-name" />
+          </div>
+          <div class="info">
+            <label for="BAX-student-email">Email:</label>
+            <input type="email" name="BAX-student-email" id="BAX-student-email" />
+          </div>
+          <div class="info">
+            <label for="BAX-birth-date">D.O.B.<span class="sr-only">(Date of Birth)</span></label>
+            <input type="date" name="BAX-birth-date" id="BAX-birth-date" />
+          </div>
+        </section>
+        <section role="region" aria-labelledby="BAX-html-questions">
+          <h2 id="BAX-html-questions">HTML</h2>
+          <div class="question-block">
+            <p>1</p>
+            <fieldset class="question" name="BAX-html-question-one">
+              <legend>
+                The legend element represents a caption for the content of its
+                parent fieldset element
+              </legend>
+              <ul class="answers-list">
+                <li>
+                  <label for="BAX-q1-a1">
+                    <input type="radio" id="BAX-q1-a1" name="BAX-q1" value="true" />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="BAX-q1-a2">
+                    <input type="radio" id="BAX-q1-a2" name="BAX-q1" value="false" />
+                    False
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+          <div class="question-block">
+            <p>2</p>
+            <fieldset class="question" name="BAX-html-question-two">
+              <legend>
+                A label element nesting an input element is required to have a
+                for attribute with the same value as the input's id
+              </legend>
+              <ul class="answers-list">
+                <li>
+                  <label for="BAX-q2-a1">
+                    <input type="radio" id="BAX-q2-a1" name="BAX-q2" value="true" />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="BAX-q2-a2">
+                    <input type="radio" id="BAX-q2-a2" name="BAX-q2" value="false" />
+                    False
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+        </section>
+        <section role="region" aria-labelledby="BAX-css-questions">
+          <h2 id="BAX-css-questions">CSS</h2>
+          <div class="formrow">
+            <div class="question-block">
+              <label for="BAX-customer">Are you a frontend developer?</label>
+            </div>
+            <div class="answer">
+              <select name="BAX-customer" id="BAX-customer" required>
+                <option value="">Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="question-block">
+              <label for="BAX-css-questions">Do you have any questions:</label>
+            </div>
+            <div class="answer">
+              <textarea id="BAX-css-questions" name="BAX-css-questions" rows="5" cols="24" placeholder="Who is flexbox..."></textarea>
+            </div>
+          </div>
+        </section>
+        <button type="submit">Send</button>
+      </form>
+    </main>
+    <footer>
+      <address>
+        <a href="https://https://www.facebook.com/profile.php?id=100006897526647">Aderino Arya Nanda</a><br />
+        Surakarta, Central Java<br />
+        Indonesia
+      </address>
+    </footer>
+  </body>
+</html>
